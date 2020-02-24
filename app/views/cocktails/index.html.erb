@@ -1,9 +1,32 @@
-<h1>All cocktails</h1>
+ <!-- Header -->
+    <div class="banner">
+      <div class="container">
+        <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+        <p>Change your life and learn to code at one of our campuses around the world.</p>
+        <a class="btn btn-flat" href="#">Apply now</a>
+      </div>
+    </div>
+<!-- Cocktails -->
+<div class="container">
+  <!-- Cocktail Header -->
+  <div class="row">
+    <h1 class="header-cocktails">All cocktails</h1>
+  </div>
 
-<ul>
-  <% @cocktails.each do |cocktail| %>
-  <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
-  <% end %>
-</ul>
 
-<h4><%= link_to "Add new cocktail", new_cocktail_path %></h4>
+<!-- Cocktail Card -->
+  <div class="grid-container">
+    <!-- Card 1 -->
+    <% @cocktails.each do |cocktail| %>
+      <div class="cocktail-card">
+          <div class="cocktail-image-card">
+            <%=  cl_image_tag cocktail.photos.first.key, height: 300, width: 280, crop: :fill %>
+          </div>
+          <h3><%= link_to cocktail.name, cocktail_path(cocktail), class: "cocktail-name" %></h3>
+      </div>
+    <% end %>
+    <!-- Card 2 -->
+    <!-- Card 3 -->
+    <!-- Card 4 -->
+  </div>
+</div>
